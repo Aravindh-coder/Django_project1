@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registered Participants</title>
+  <style>
+    /* Epic Avengers battlefield background */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url("https://wallpapers.com/images/hd/avengers-endgame-epic-battle-4k-y9q47szm9v8g9f5j.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow-y: scroll;
+    }
+
+    /* Dark cinematic overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 20, 0.65);
+      z-index: 0;
+    }
+
+    /* Avengers running animation (GIF overlay) */
+    .avengers-run {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-height: 40vh;
+      background: url("https://media.giphy.com/media/Q7ozWVYCR0nyW2rvPW/giphy.gif") no-repeat center bottom;
+      background-size: contain;
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Container for participants list */
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 40px;
+      border-radius: 18px;
+      background: rgba(0, 0, 40, 0.65);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.4),
+                  0 0 60px rgba(255, 0, 150, 0.3);
+      animation: fadeIn 1.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { transform: translateY(60px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h2 {
+      font-size: 38px;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 25px cyan, 0 0 40px magenta;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      font-size: 20px;
+      margin: 12px 0;
+      padding: 14px 20px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    ul li:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+    }
+
+    ul li::before {
+      content: "🦸";
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Avengers running scene -->
+  <div class="avengers-run"></div>
+
+  <!-- Participants list -->
+  <div class="container">
+    <h2>⚡ Registered Participants ⚡</h2>
+    <ul>
+      {% for p in participants %}
+        <li>{{ p.name }} - {{ p.email }} - {{ p.phone }} - Event: {{ p.event.name }}</li>
+      {% empty %}
+        <li>No participants yet.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>

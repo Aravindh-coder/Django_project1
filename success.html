@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Successful - Avengers Portal</title>
+  <style>
+    /* === Space Galaxy Background with Stars === */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      overflow: hidden;
+    }
+
+    /* Stars animation */
+    .stars {
+      width: 1px;
+      height: 1px;
+      background: transparent;
+      box-shadow: 
+        100px 200px #FFF, 300px 400px #FFF, 600px 800px #FFF,
+        900px 120px #FFF, 1200px 700px #FFF, 1500px 200px #FFF,
+        1800px 600px #FFF, 2000px 300px #FFF;
+      animation: animStar 50s linear infinite;
+    }
+
+    .stars::after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      width: 1px;
+      height: 1px;
+      background: transparent;
+      box-shadow: 
+        100px 200px #FFF, 300px 400px #FFF, 600px 800px #FFF,
+        900px 120px #FFF, 1200px 700px #FFF, 1500px 200px #FFF,
+        1800px 600px #FFF, 2000px 300px #FFF;
+    }
+
+    @keyframes animStar {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-2000px); }
+    }
+
+    /* === Avengers-style Glowing Success Card === */
+    .success-container {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(0, 255, 255, 0.6);
+      border-radius: 25px;
+      padding: 50px 40px;
+      width: 420px;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 40px rgba(0,255,255,0.8), 0 0 80px rgba(0,0,255,0.6);
+      color: #fff;
+      animation: portalGlow 3s infinite alternate;
+    }
+
+    @keyframes portalGlow {
+      0% { box-shadow: 0 0 20px rgba(0,255,255,0.5), 0 0 50px rgba(0,0,255,0.5); }
+      100% { box-shadow: 0 0 60px rgba(0,255,255,0.9), 0 0 120px rgba(0,0,255,0.9); }
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px cyan, 0 0 40px blue;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #cce7ff;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(90deg, #ff0000, #ff7300, #fffb00, #00ffd5, #002bff);
+      background-size: 400% 400%;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 15px;
+      font-size: 17px;
+      font-weight: bold;
+      transition: 0.4s;
+      animation: gradientShift 6s ease infinite;
+      box-shadow: 0px 0px 20px rgba(255,0,0,0.8);
+    }
+
+    a:hover {
+      transform: scale(1.15) rotate(3deg);
+      box-shadow: 0px 0px 40px rgba(255,255,255,1);
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  
+  <div class="success-container">
+    <h2>🌀 Registration Successful!</h2>
+    <p>You’ve entered the Hackathon Multiverse 🌌<br>Your details have been secured by the Avengers 🔱</p>
+    <a href="/register/">➕ Register Another</a>
+  </div>
+</body>
+</html>

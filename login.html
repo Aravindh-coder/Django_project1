@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizer Login - Hackathon</title>
+    <style>
+        /* Futuristic Animated Background */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at top left, #0f0c29, #302b63, #24243e);
+            overflow: hidden;
+        }
+
+        /* Moving glowing circles (robotic effect) */
+        body::before, body::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(0, 255, 255, 0.2);
+            border-radius: 50%;
+            filter: blur(120px);
+            animation: floaty 12s infinite ease-in-out alternate;
+        }
+
+        body::after {
+            top: auto;
+            bottom: -150px;
+            right: -150px;
+            background: rgba(255, 0, 150, 0.2);
+            animation-duration: 15s;
+        }
+
+        @keyframes floaty {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(-50px) translateX(50px); }
+        }
+
+        /* Glassmorphic Login Card */
+        .login-container {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.3),
+                        0 0 50px rgba(255, 0, 150, 0.2);
+            width: 360px;
+            text-align: center;
+            color: white;
+            animation: popIn 1s ease;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px cyan, 0 0 25px #ff0099;
+        }
+
+        p {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        input {
+            width: 85%;
+            padding: 12px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 15px;
+            outline: none;
+            box-shadow: inset 2px 2px 8px rgba(0,0,0,0.3),
+                        inset -2px -2px 8px rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+
+        input:focus {
+            background: rgba(255,255,255,0.3);
+            box-shadow: 0 0 15px cyan, 0 0 25px #ff0099;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 90%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #00f2fe, #4facfe, #ff6a00, #ee0979);
+            background-size: 300% 300%;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            transition: 0.4s ease;
+        }
+
+        button:hover {
+            background-position: right center;
+            transform: scale(1.08);
+            box-shadow: 0 0 20px cyan, 0 0 30px #ff0099;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Error / Info messages */
+        .error-msg {
+            color: #ff4b5c;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .info-msg {
+            color: #00f2fe;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>🤖 Organizer Login</h2>
+        
+        {% if form.errors %}
+            <p class="error-msg">⚠ Invalid username or password</p>
+        {% endif %}
+        
+        {% if next %}
+            <p class="info-msg">🔐 Please log in to continue.</p>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <p>
+                {{ form.username.label_tag }} <br>
+                {{ form.username }}
+            </p>
+            <p>
+                {{ form.password.label_tag }} <br>
+                {{ form.password }}
+            </p>
+            <button type="submit">🚀 Login</button>
+        </form>
+    </div>
+</body>
+</html>
