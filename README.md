@@ -48,6 +48,10 @@ This project is a web-based Event Registration platform built using Django. It a
 6. **Access the website:**
    Open your browser and navigate to [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
+##screenshots
+
+![image alt](image_url) 
+
 ## Usage
 
 - Register as a new user or log in with existing credentials.
