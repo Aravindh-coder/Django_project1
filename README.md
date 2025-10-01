@@ -51,7 +51,7 @@ This project is a web-based Event Registration platform built using Django. It a
 ##screenshots
 welcome page!!
 ![image alt](image_url) https://github.com/Aravindh-coder/Django_project1/blob/92d09a353068bff25544b06f867c2d85503cc6b3/welcome%20page.jpg registration page!!!
-![image alt](image_url)
+![image alt](image_url) https://github.com/Aravindh-coder/Django_project1/blob/9c2f046ad07553cd668846fdc5307cc10b64e6f8/registration%20page.jpg
 this is success page!!!
 ![image alt](image_url)
 login page!!!
