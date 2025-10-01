@@ -59,7 +59,7 @@ login page!!!
 this is participants list!!!
 ![image alt](image_url) https://github.com/Aravindh-coder/Django_project1/blob/d573504a9d877bcea32f4f9f56f02cad32ac88e2/participants%20list.jpg
 and this one is admin page where i can add or remove participants and users!!!
-![image alt](image_url)
+![image alt](image_url) https://github.com/Aravindh-coder/Django_project1/blob/05d92a4d1dba19fedc3fa2b1eef3db57988ea148/admin%20page.jpg
 
 ## Usage
 
