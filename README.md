@@ -49,9 +49,16 @@ This project is a web-based Event Registration platform built using Django. It a
    Open your browser and navigate to [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ##screenshots
-
-![image alt](image_url) 
-
+welcome page!!
+![image alt](image_url) https://github.com/Aravindh-coder/Django_project1/blob/92d09a353068bff25544b06f867c2d85503cc6b3/welcome%20page.jpg registration page!!!
+![image alt](image_url)
+this is success page!!!
+![image alt](image_url)
+login page!!!
+![image alt](image_url)
+this is participants list!!!
+![image alt](image_url)
+and this one is admin page where i can add or remove participants and users!!!
 ## Usage
 
 - Register as a new user or log in with existing credentials.
